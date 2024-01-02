@@ -17,6 +17,7 @@ public class RecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
+        //Weapons
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemManager.BOWSTAFF, 1)
                 .pattern("B")
                 .pattern("B")
@@ -35,5 +36,40 @@ public class RecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.FIRE_CHARGE), conditionsFromItem(Items.FIRE_CHARGE))
                 .criterion(hasItem(Items.BLAZE_ROD), conditionsFromItem(Items.BLAZE_ROD))
                 .offerTo(exporter, new Identifier(Manager.id, getRecipeName(ItemManager.FIREWAND)));
+        //Chainmail armor
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.CHAINMAIL_HELMET)
+                .pattern("INI")
+                .pattern("N N")
+                .input('I', Items.IRON_INGOT)
+                .input('N', Items.IRON_NUGGET)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
+                .offerTo(exporter, new Identifier(Manager.id, getRecipeName(Items.CHAINMAIL_HELMET)));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.CHAINMAIL_CHESTPLATE)
+                .pattern("N N")
+                .pattern("INI")
+                .pattern("NIN")
+                .input('I', Items.IRON_INGOT)
+                .input('N', Items.IRON_NUGGET)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
+                .offerTo(exporter, new Identifier(Manager.id, getRecipeName(Items.CHAINMAIL_CHESTPLATE)));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.CHAINMAIL_LEGGINGS)
+                .pattern("NIN")
+                .pattern("I I")
+                .pattern("N N")
+                .input('I', Items.IRON_INGOT)
+                .input('N', Items.IRON_NUGGET)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
+                .offerTo(exporter, new Identifier(Manager.id, getRecipeName(Items.CHAINMAIL_LEGGINGS)));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.CHAINMAIL_BOOTS)
+                .pattern("N N")
+                .pattern("I I")
+                .input('I', Items.IRON_INGOT)
+                .input('N', Items.IRON_NUGGET)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
+                .offerTo(exporter, new Identifier(Manager.id, getRecipeName(Items.CHAINMAIL_BOOTS)));
     }
 }

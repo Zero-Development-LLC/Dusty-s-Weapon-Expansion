@@ -18,6 +18,7 @@ public class ItemManager {
         return Registry.register(Registries.ITEM, new Identifier(Manager.id, name), item);
     }
 
+    //Add registeries in the Client class!
     public static void registerChargable(Item chargeable, float chargeTime) {
         ModelPredicateProviderRegistry.register(chargeable, new Identifier(Manager.id,"charge"),
                 ((stack, world, entity, seed) -> {
@@ -43,7 +44,7 @@ public class ItemManager {
     }
 
     public static void init() {
-        registerChargable(FIREWAND, Firewand.CHARGE_TIME);
+
     }
 
 }
