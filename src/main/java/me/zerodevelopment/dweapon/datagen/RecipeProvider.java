@@ -71,5 +71,14 @@ public class RecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
                 .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
                 .offerTo(exporter, new Identifier(Manager.id, getRecipeName(Items.CHAINMAIL_BOOTS)));
+        //NameTag
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Items.NAME_TAG)
+                .pattern("N")
+                .pattern("P")
+                .input('N', Items.IRON_NUGGET)
+                .input('P', Items.PAPER)
+                .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
+                .criterion(hasItem(Items.PAPER), conditionsFromItem(Items.PAPER))
+                .offerTo(exporter, new Identifier(Manager.id, getRecipeName(Items.NAME_TAG)));
     }
 }

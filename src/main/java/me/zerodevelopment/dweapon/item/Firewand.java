@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 
 public class Firewand extends ToolItem {
 
-    public static final float CHARGE_TIME = 3, FIREBALL_SPEED = 1.2f, EXPLOSION_POWER = 5, MIN_CHARGE_TIME = 0.25f;
+    public static final float CHARGE_TIME = 3, FIREBALL_SPEED = 1.2f, EXPLOSION_POWER = 3, MIN_CHARGE_TIME = 0.25f;
 
     public Firewand(ToolMaterial material, Settings settings) {
         super(material, settings);
