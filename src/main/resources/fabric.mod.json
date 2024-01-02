@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "dweapon",
+	"version": "${version}",
+	"name": "Dusty's Weapon Expansion",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Bubbabinks",
+		"Mr. Dustman"
+	],
+	"contact": {
+		"homepage": "https://github.com/Zero-Development-LLC/UntitledMod",
+		"sources": "https://github.com/Zero-Development-LLC/UntitledMod"
+	},
+	"license": "MIT",
+	"icon": "assets/dweapon/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.zerodevelopment.dweapon.Manager"
+		],
+		"client": [
+			"me.zerodevelopment.dweapon.Client"
+		],
+		"fabric-datagen": [
+			"me.zerodevelopment.dweapon.DataGenerator"
+		]
+	},
+	"mixins": [
+		"dweapon.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.3",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
