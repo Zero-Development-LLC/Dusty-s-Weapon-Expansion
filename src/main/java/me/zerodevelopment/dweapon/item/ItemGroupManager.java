@@ -16,7 +16,7 @@ public class ItemGroupManager {
                     .icon(() -> new ItemStack(ItemManager.BOWSTAFF))
                     .entries((displayContext, entries) -> {
                         entries.add(ItemManager.BOWSTAFF);
-
+                        entries.add(ItemManager.FIREWAND);
                     }).build());
 
     public static void init() {

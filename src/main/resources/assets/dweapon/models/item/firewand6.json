@@ -1,0 +1,6 @@
+{
+  "parent": "dweapon:item/firewand",
+  "textures": {
+    "layer0": "dweapon:item/firewand6"
+  }
+}

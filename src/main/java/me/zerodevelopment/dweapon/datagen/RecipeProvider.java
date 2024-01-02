@@ -24,5 +24,16 @@ public class RecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.BAMBOO)
                 .criterion(hasItem(Items.BAMBOO), conditionsFromItem(Items.BAMBOO))
                 .offerTo(exporter, new Identifier(Manager.id, getRecipeName(ItemManager.BOWSTAFF)));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemManager.FIREWAND, 1)
+                .pattern(" GF")
+                .pattern(" GG")
+                .pattern("B  ")
+                .input('G', Items.GOLD_INGOT)
+                .input('F', Items.FIRE_CHARGE)
+                .input('B', Items.BLAZE_ROD)
+                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
+                .criterion(hasItem(Items.FIRE_CHARGE), conditionsFromItem(Items.FIRE_CHARGE))
+                .criterion(hasItem(Items.BLAZE_ROD), conditionsFromItem(Items.BLAZE_ROD))
+                .offerTo(exporter, new Identifier(Manager.id, getRecipeName(ItemManager.FIREWAND)));
     }
 }

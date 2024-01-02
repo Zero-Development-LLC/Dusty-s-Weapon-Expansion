@@ -1,0 +1,42 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "dweapon:item/firewand"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "dweapon:charge": 1
+      },
+      "model": "dweapon:item/firewand2"
+    },
+    {
+      "predicate": {
+        "dweapon:charge": 1,
+        "dweapon:charging": 0.25
+      },
+      "model": "dweapon:item/firewand3"
+    },
+    {
+      "predicate": {
+        "dweapon:charge": 1,
+        "dweapon:charging": 0.5
+      },
+      "model": "dweapon:item/firewand4"
+    },
+    {
+      "predicate": {
+        "dweapon:charge": 1,
+        "dweapon:charging": 0.75
+      },
+      "model": "dweapon:item/firewand5"
+    },
+    {
+      "predicate": {
+        "dweapon:charge": 1,
+        "dweapon:charging": 1.0
+      },
+      "model": "dweapon:item/firewand6"
+    }
+  ]
+}

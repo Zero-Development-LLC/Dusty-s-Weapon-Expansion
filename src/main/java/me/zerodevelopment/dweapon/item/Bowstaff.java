@@ -1,25 +1,20 @@
 package me.zerodevelopment.dweapon.item;
 
-import me.zerodevelopment.dweapon.Manager;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.StackReference;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.screen.slot.Slot;
-import net.minecraft.util.ClickType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
-import net.minecraft.util.UseAction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class BowStaff extends SwordItem {
+public class Bowstaff extends SwordItem {
 
     public static double forwardJumpSpeed = .7d;
     public static double upJumpSpeed = 0.6d;
 
-    public BowStaff(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
+    public Bowstaff(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);
     }
 
@@ -41,7 +36,7 @@ public class BowStaff extends SwordItem {
         }else {
             if (user.isOnGround()) {
                 ItemStack itemStack = user.getMainHandStack();
-                itemStack.damage(1, user, playerEntity -> {});
+                itemStack.damage(1, user, (p) -> p.sendToolBreakStatus(user.getActiveHand()));
             }
         }
         return super.use(world, user, hand);
