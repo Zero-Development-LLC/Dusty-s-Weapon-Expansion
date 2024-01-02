@@ -2,6 +2,7 @@ package me.zerodevelopment.dweapon.item;
 
 import me.zerodevelopment.dweapon.Manager;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.item.FishingRodItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
