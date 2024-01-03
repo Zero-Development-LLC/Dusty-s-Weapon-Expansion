@@ -2,7 +2,6 @@ package me.zerodevelopment.dweapon.item;
 
 import me.zerodevelopment.dweapon.Manager;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.item.FishingRodItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -18,6 +17,10 @@ public class ItemGroupManager {
                     .entries((displayContext, entries) -> {
                         entries.add(ItemManager.BOWSTAFF);
                         entries.add(ItemManager.FIREWAND);
+                        entries.add(ItemManager.WOODENSHIELD);
+                        entries.add(ItemManager.GOLDENSHIELD);
+                        entries.add(ItemManager.IRONSHIELD);
+                        entries.add(ItemManager.DIAMONDSHIELD);
                     }).build());
 
     public static void init() {

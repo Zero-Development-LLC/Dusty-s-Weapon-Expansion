@@ -1,6 +1,10 @@
 {
   "item.dweapon.bowstaff": "Bowstaff",
   "item.dweapon.firewand": "Firewand",
+  "item.dweapon.woodenshield": "Wooden Shield",
+  "item.dweapon.goldenshield": "Golden Shield",
+  "item.dweapon.ironshield": "Iron Shield",
+  "item.dweapon.diamondshield": "Diamond Shield",
 
   "itemgroup.moditemgroup": "Dusty's Weapon Expansion"
 }
