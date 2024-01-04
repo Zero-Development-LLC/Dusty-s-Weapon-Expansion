@@ -1,0 +1,6 @@
+{
+  "parent": "dweapon:item/whip",
+  "textures": {
+    "layer0": "dweapon:item/whip_ing"
+  }
+}

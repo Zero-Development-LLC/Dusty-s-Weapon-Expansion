@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "dweapon:woodenshield"
+    "dweapon:woodenshield",
+    "dweapon:goldenshield",
+    "dweapon:ironshield",
+    "dweapon:diamondshield",
+    "dweapon:netheriteshield"
   ]
 }

@@ -17,6 +17,7 @@ public class ItemManager {
     //ability weapons
     public static final Item BOWSTAFF = registerItem("bowstaff", new Bowstaff(ToolMaterials.BAMBOO, 3, -2f, new FabricItemSettings()));
     public static final Item FIREWAND = registerItem("firewand", new Firewand(net.minecraft.item.ToolMaterials.GOLD, new FabricItemSettings()));
+    public static final Item WHIP = registerItem("whip", new Whip(new FabricItemSettings().maxDamage(425)));
 
     //shields
     public static final Item WOODENSHIELD = registerItem("woodenshield", new FabricShieldItem(new FabricItemSettings().maxDamage(net.minecraft.item.ToolMaterials.WOOD.getDurability()),
@@ -27,6 +28,8 @@ public class ItemManager {
             80, 10, Items.IRON_INGOT));
     public static final Item DIAMONDSHIELD = registerItem("diamondshield", new FabricShieldItem(new FabricItemSettings().maxDamage(net.minecraft.item.ToolMaterials.DIAMOND.getDurability()),
             60, 17, Items.DIAMOND));
+    public static final Item NETHERITESHIELD = registerItem("netheriteshield", new FabricShieldItem(new FabricItemSettings().maxDamage(net.minecraft.item.ToolMaterials.NETHERITE.getDurability()),
+            40, 20, Items.NETHERITE_INGOT));
 
     public static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(Manager.id, name), item);
@@ -55,6 +58,18 @@ public class ItemManager {
                     return (float)(stack.getMaxUseTime()-entity.getItemUseTimeLeft())/(20f*chargeTime);
                 }
                 );
+    }
+    public static void registerWhip(Item whip) {
+        ModelPredicateProviderRegistry.register(whip, new Identifier(Manager.id, "whip"),
+                (stack, world, entity, seed) -> {
+                    if (entity == null) {
+                        return 0.0f;
+                    }
+                    if (entity.getActiveItem() != stack) {
+                        return 0.0f;
+                    }
+                    return 1.0f;
+                });
     }
 
     public static void init() {

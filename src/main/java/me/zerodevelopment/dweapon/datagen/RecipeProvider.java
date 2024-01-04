@@ -7,7 +7,9 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.SmithingRecipe;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 
 public class RecipeProvider extends FabricRecipeProvider {
@@ -80,5 +82,39 @@ public class RecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
                 .criterion(hasItem(Items.PAPER), conditionsFromItem(Items.PAPER))
                 .offerTo(exporter, new Identifier(Manager.id, getRecipeName(Items.NAME_TAG)));
+        //Shields
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemManager.WOODENSHIELD)
+                .pattern("PLP")
+                .pattern("PPP")
+                .pattern(" P ")
+                .input('P', ItemTags.PLANKS)
+                .input('L', ItemTags.LOGS)
+                .criterion(hasItem(Items.OAK_LOG), conditionsFromItem(Items.OAK_LOG))
+                .offerTo(exporter, new Identifier(Manager.id, getRecipeName(ItemManager.WOODENSHIELD)));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemManager.GOLDENSHIELD)
+                .pattern("PLP")
+                .pattern("PPP")
+                .pattern(" P ")
+                .input('P', Items.GOLD_INGOT)
+                .input('L', ItemTags.LOGS)
+                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
+                .offerTo(exporter, new Identifier(Manager.id, getRecipeName(ItemManager.GOLDENSHIELD)));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemManager.IRONSHIELD)
+                .pattern("PLP")
+                .pattern("PPP")
+                .pattern(" P ")
+                .input('P', Items.IRON_INGOT)
+                .input('L', ItemTags.LOGS)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter, new Identifier(Manager.id, getRecipeName(ItemManager.IRONSHIELD)));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemManager.DIAMONDSHIELD)
+                .pattern("PLP")
+                .pattern("PPP")
+                .pattern(" P ")
+                .input('P', Items.DIAMOND)
+                .input('L', ItemTags.LOGS)
+                .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter, new Identifier(Manager.id, getRecipeName(ItemManager.DIAMONDSHIELD)));
+        offerNetheriteUpgradeRecipe(exporter, ItemManager.DIAMONDSHIELD, RecipeCategory.COMBAT, ItemManager.NETHERITESHIELD);
     }
 }

@@ -17,10 +17,12 @@ public class ItemGroupManager {
                     .entries((displayContext, entries) -> {
                         entries.add(ItemManager.BOWSTAFF);
                         entries.add(ItemManager.FIREWAND);
+                        entries.add(ItemManager.WHIP);
                         entries.add(ItemManager.WOODENSHIELD);
                         entries.add(ItemManager.GOLDENSHIELD);
                         entries.add(ItemManager.IRONSHIELD);
                         entries.add(ItemManager.DIAMONDSHIELD);
+                        entries.add(ItemManager.NETHERITESHIELD);
                     }).build());
 
     public static void init() {
